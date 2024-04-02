@@ -1,3 +1,5 @@
+
+function titleCased(){
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -11,6 +13,12 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+return tutorials.map(tutorial => {
+  return tutorial.replace(/\b\w+/g, function(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+});
 }
+
+console.log(titleCased());
+
